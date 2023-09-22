@@ -4,6 +4,7 @@
   "description": "prototype",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,8 +18,11 @@
   },
   "homepage": "https://github.com/DastanVishu/GraphQL#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.2",
     "nodemon": "^3.0.1"
   }
 }
