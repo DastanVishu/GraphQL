@@ -4,19 +4,15 @@ const jwt = require("jsonwebtoken");
 
 // all databaseSchema....
 const User = require("./models/UserModel").user;
-
+const Book = require("./models/BookModel").book;
 class DatabaseHelper {
     mainConnection() {
         mongoose.Promise = global.Promise;
-        // mongoose.set("useNewUrlParser", true);
-        // mongoose.set("useUnifiedTopology", true);
-        // mongoose.set("useCreateIndex", true);
-        // mongoose.set("useFindAndModify", false);
-
         mongoose.connect(process.env.DATABASE_CONNECTION).then(()=> {
             console.log("Connected to Main DB");
             databaseModelsCommon = {
-                user: mongoose.connection.model("User", User)
+                user: mongoose.connection.model("User", User),
+                book: mongoose.connection.model("Book", Book)
             }
             databaseModels = {...databaseModelsCommon};
         },
